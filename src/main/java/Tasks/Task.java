@@ -1,25 +1,33 @@
 package Tasks;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Task {
+public class Task implements Serializable
+{
 
     //defining variables
-
-    private String name;
-    private Date dueDate;
+    private String title;
+    private String dueDate; //todo make it as Date or LocalDate
     private String user;
     private String project;
     private boolean isDone;
 
-    public String getName() {
-        return name;
+    //todo ask Nour about how to use Date
+
+
+    // Constructor (change it to my strings types, learning how to do it, pending to review with a TA)
+
+    public Task(String title, String dueDate, String user, String project, boolean isDone) {
+        this.title = title;
+        this.dueDate = dueDate;
+        this.user = user;
+        this.project = project;
+        this.isDone = isDone;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public Task() { } //todo remove this
 
+    //function for get the date
     public void setProject(String project) {
         this.project = project;
     }
@@ -34,32 +42,38 @@ public class Task {
         this.user = user;
     }
 
-    //create get and set methods for the due date
-
-    public Date getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
-    }
-
     //create get and set methods for the project
 
     public String getProject() {
         return project;
     }
 
+    //create the get and set for the title
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
-                "name='" + name + '\'' +
+                "title='" + title + '\'' +
                 ", dueDate=" + dueDate +
                 ", user='" + user + '\'' +
                 ", project='" + project + '\'' +
                 ", isDone=" + isDone +
                 '}';
     }
+
 
     public boolean isDone() {
         return isDone;
@@ -69,8 +83,5 @@ public class Task {
         this.isDone = isDone;
     }
 
-    public Task() {
-        super();
-    }
 
 }

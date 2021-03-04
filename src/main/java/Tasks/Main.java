@@ -15,7 +15,8 @@ public class Main {
         System.out.println("2. Add New Task");
         System.out.println("3. Edit Task (update, mark as done, remove)");
         System.out.println("4. Save and Quit");
-
+        System.out.println("|  *Type a number to make a selection*  |");
+        System.out.print("Selection: ");
     }
 
 
@@ -23,6 +24,7 @@ public class Main {
     {
         Scanner scanner = new Scanner(System.in);
         TodoList todo = new TodoList();
+
 
         //see the menu
         seeMenu();
@@ -44,8 +46,14 @@ public class Main {
                 break;
 
             case 3:
-                System.out.println("Remove a task");
+                System.out.println("Remove a task"); //This case will have to be able to edit, a task but for now is working with remove
                 todo.removeTask();
+                break;
+
+            case 4:
+                System.out.println("Thank you for using ToDoLY today! Goodbye!");
+                todo.writeAsData();
+                System.exit(0);
                 break;
         }
 
