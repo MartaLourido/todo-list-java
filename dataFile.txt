@@ -1,4 +1,9 @@
-Task{title='t1', dueDate=2020, user='u1', project='p2', isDone=true}
-Task{title='t2', dueDate=2020, user='u2', project='p1', isDone=false}
-Task{title='t3', dueDate=2020, user='u2', project='p2', isDone=false}
-Task{title='t4', dueDate=2020, user='u1', project='p1', isDone=true}
+Task{title='null', date=null, user='null', project='null', isDone=false}
+Task{title='null', date=null, user='null', project='null', isDone=false}
+Task{title='null', date=null, user='null', project='null', isDone=false}
+Task{title='null', date=null, user='null', project='null', isDone=false}
+Task{title='null', date=null, user='null', project='null', isDone=false}
+Task{title='null', date=null, user='null', project='null', isDone=false}
+Task{title='Marta', date=null, user='solve this problem', project='P2', isDone=false}
+Task{title='nour', date=null, user='', project='p1', isDone=false}
+Task{title='nour', date=Sun Feb 02 00:00:00 CET 2020, user='t1', project='p1', isDone=false}

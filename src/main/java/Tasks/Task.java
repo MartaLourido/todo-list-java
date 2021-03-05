@@ -7,6 +7,7 @@ public class Task implements Serializable
 {
 
     //defining variables
+    private static final long serialVersionUID = 6076677258728022863L;
     private String title;
     private Date date; //todo make it as Date or LocalDate
     private String user;
@@ -25,6 +26,7 @@ public class Task implements Serializable
         this.project = project;
         this.isDone = isDone;
     }
+
 
     public Task() { } //todo remove this
 

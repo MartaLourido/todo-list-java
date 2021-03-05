@@ -17,7 +17,7 @@ public class TodoList
     public TodoList()
     {
 
-        tasks = readAsData(); //todo
+        tasks =  readAsObject(); //todo
         //tasks = new ArrayList<>();
     }
 
@@ -76,7 +76,8 @@ public class TodoList
     public void addTask()
     {
 
-        Task task = new Task();
+        Task task;
+        task = new Task();
         //SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please, enter your name");
@@ -93,6 +94,7 @@ public class TodoList
         task.setUser(title);
         task.setDate(date);
         tasks.add(task);
+        writeAsObject();
         showTasks(); //for see the task when we add it
     }
 
@@ -203,7 +205,10 @@ public class TodoList
             FileInputStream fileStream = new FileInputStream(file);
             ObjectInputStream reader = new ObjectInputStream(fileStream);
 
-            list = (ArrayList<Task>) reader.readObject();
+            for (Task task : list = (ArrayList<Task>) reader.readObject()) {
+                
+            }
+            ;
 
             reader.close();
             fileStream.close();

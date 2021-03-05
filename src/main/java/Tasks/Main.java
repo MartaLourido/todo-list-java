@@ -49,6 +49,7 @@ public class Main {
             }
             case 4 -> {
                 System.out.println("Thank you for using ToDoLY today! Goodbye!");
+                todo.writeAsObject();
                 System.exit(0);
             }
             default -> throw new IllegalStateException("Unexpected value: " + choice);
