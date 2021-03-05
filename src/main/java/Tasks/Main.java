@@ -27,6 +27,7 @@ public class Main {
 
 
         //see the menu
+        while (true) {
         seeMenu();
 
         //switch with some cases which call the add, remove, and another methods from the TodoList/TaskList
@@ -55,6 +56,7 @@ public class Main {
             default -> throw new IllegalStateException("Unexpected value: " + choice);
         }
 
+        }
 
     }
 }
