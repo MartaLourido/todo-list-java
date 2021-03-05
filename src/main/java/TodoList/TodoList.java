@@ -3,20 +3,20 @@ package TodoList;
 import Tasks.Task;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 public class TodoList
 {
 
-    private ArrayList<Task> tasks;
+    private ArrayList<Task> tasks ;
+    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
     public TodoList()
     {
-        //here would be the constructor but not for now, working on other things;
+
         tasks = readAsData(); //todo
         //tasks = new ArrayList<>();
     }
@@ -35,19 +35,21 @@ public class TodoList
     //method for show the tasks
     public void showTasks() {
         System.out.println("To-Do List Tasks");
+        System.out.println("-----------------");
         int number = 0;
         for (Task task : tasks) {
             System.out.println(++number + " " + task);
         }
-        getTasksSortedByDate();
+        System.out.println("-----------------");
+
     }
 
-    //method for remove a task
+    //method for remove one task
 
     public  void removeTask() {
         System.out.println("Remove Task");
         Scanner scanner = new Scanner(System.in);
-        System.out.print("What task do you want to remove?");
+        System.out.print("What task do you want to remove?:");
         int index = scanner.nextInt();
         if((index-1)<0 || index>tasks.size()) {
             System.out.println("Wrong index number! Please enter in range of 1 to "+tasks.size());
@@ -59,9 +61,23 @@ public class TodoList
 
     }
 
-    public void addTask() {
-        // commenting the new task because i am learning how to create a constructor in the todolist and i got an error from the IDE when i did it
+    //method for sort the tasks
+
+    public void sortTasks() {
+        System.out.println("Sorted tasks by date (earliest first): ");
+        sort(tasks);
+        this.showTasks();
+    }
+
+    private void sort(ArrayList<Task> tasks) {
+    }
+
+
+    public void addTask()
+    {
+
         Task task = new Task();
+        //SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please, enter your name");
         String name = scanner.nextLine();
@@ -69,25 +85,27 @@ public class TodoList
         String project = scanner.nextLine();
         System.out.println("Please, enter a title for the task");
         String title = scanner.nextLine();
-        System.out.println("Please enter due date");
-        String date = scanner.nextLine();
+        System.out.print("Enter the task due date (dd/mm/yyyy): ");
+        Date date = validateDate();
 
         task.setTitle(name);
         task.setProject(project);
         task.setUser(title);
+        task.setDate(date);
         tasks.add(task);
-        //showTasks();
+        showTasks(); //for see the task when we add it
     }
 
     //Writing and reading
 
     public void fillList()
     {
-        // public Task(String title, String dueDate, String user, String project, boolean isDone)
-        Task t1 = new Task("t1", "2020", "u1", "p2", true);
-        Task t2 = new Task("t2", "2020", "u2", "p1", false);
-        Task t3 = new Task("t3", "2020", "u2", "p2", false);
-        Task t4 = new Task("t4", "2020", "u1", "p1", true);
+        // public Task(String title, String Date, String user, String project, boolean isDone)
+        // public Task(String title, String date, String user, String project, boolean isDone)
+        Task t1 = new Task("t1", new Date(), "u1", "p2", true);
+        Task t2 = new Task("t2", new Date(), "u2", "p1", false);
+        Task t3 = new Task("t3", new Date(), "u2", "p2", false);
+        Task t4 = new Task("t4", new Date(), "u1", "p1", true);
 
         tasks.add(t1);
         tasks.add(t2);
@@ -128,16 +146,16 @@ public class TodoList
             String[] data ;
             while( (line = reader.readLine()) != null )
             {
-                // Task{title='t1', dueDate=2020, user='u1', project='p2', isDone=true}
+                // Task{title='t1', date=2020, user='u1', project='p2', isDone=true}
                 data = line.split(", ");
 
                 String title = data[0].substring("Task{title='".length() , data[0].length() -1);
-                String date = data[1].substring("dueDate=".length());
+                String dateString = data[1].substring("Date=".length());
                 String user = data[2].substring("user='".length() , data[2].length() -1);
                 String project = data[3].substring("project='".length() , data[3].length() -1);
                 String statusString = data[4].substring("isDone=".length() , data[4].length() -1);
 
-                Task t = new Task(title, date, user, project, Boolean.parseBoolean(statusString));
+                Task t = new Task(title, convertToDate(dateString), user, project, Boolean.parseBoolean(statusString));
                 list.add(t);
             }
 
@@ -207,7 +225,31 @@ public class TodoList
 
     }
 
+    public Date validateDate()
+    {
+        Scanner scanner = new Scanner(System.in);
+        while (true)
+        {
+            Date date = convertToDate(scanner.nextLine());
+            if( date  != null)
+                return date;
+            else
+                System.out.println("please enter the date correctly");
+        }
 
+    }
+
+    public Date convertToDate(String dateString)
+    {
+        try {
+            return format.parse(dateString);
+        }
+        catch (ParseException e)
+        {
+            //e.printStackTrace();
+            return null;
+        }
+    }
 
 
 

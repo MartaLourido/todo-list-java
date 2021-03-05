@@ -35,26 +35,23 @@ public class Main {
         int choice = Integer.parseInt(input);
 
         switch (choice) {
-            case 1:
+            case 1 -> {
                 System.out.println("Show Task List");
                 todo.showTasks();
-                break;
-
-            case 2:
+            }
+            case 2 -> {
                 System.out.println("Add new Task");
                 todo.addTask();
-                break;
-
-            case 3:
+            }
+            case 3 -> {
                 System.out.println("Remove a task"); //This case will have to be able to edit, a task but for now is working with remove
                 todo.removeTask();
-                break;
-
-            case 4:
+            }
+            case 4 -> {
                 System.out.println("Thank you for using ToDoLY today! Goodbye!");
-                todo.writeAsData();
                 System.exit(0);
-                break;
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + choice);
         }
 
 

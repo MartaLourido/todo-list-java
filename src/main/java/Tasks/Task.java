@@ -1,31 +1,36 @@
 package Tasks;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Task implements Serializable
 {
 
     //defining variables
     private String title;
-    private String dueDate; //todo make it as Date or LocalDate
+    private Date date; //todo make it as Date or LocalDate
     private String user;
     private String project;
     private boolean isDone;
 
+
     //todo ask Nour about how to use Date
 
 
-    // Constructor (change it to my strings types, learning how to do it, pending to review with a TA)
-
-    public Task(String title, String dueDate, String user, String project, boolean isDone) {
+    public Task(String title, Date date, String user, String project, boolean isDone)
+    {
         this.title = title;
-        this.dueDate = dueDate;
+        this.date = date;
         this.user = user;
         this.project = project;
         this.isDone = isDone;
     }
 
     public Task() { } //todo remove this
+
+    //public Task(String t1, String s, String u1, String p2, boolean b) {
+   // }
+
 
     //function for get the date
     public void setProject(String project) {
@@ -58,16 +63,15 @@ public class Task implements Serializable
         this.title = title;
     }
 
-
-    public String getDueDate() {
-        return dueDate;
+    public Date getDate() {
+        return date;
     }
 
     @Override
     public String toString() {
         return "Task{" +
                 "title='" + title + '\'' +
-                ", dueDate=" + dueDate +
+                ", date=" + date +
                 ", user='" + user + '\'' +
                 ", project='" + project + '\'' +
                 ", isDone=" + isDone +
@@ -84,4 +88,8 @@ public class Task implements Serializable
     }
 
 
+    public void setDate(Date date)
+    {
+        this.date = date;
+    }
 }
