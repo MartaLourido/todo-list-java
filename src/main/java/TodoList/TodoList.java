@@ -16,9 +16,8 @@ public class TodoList
 
     public TodoList()
     {
-
         tasks =  readAsObject(); //todo
-        //tasks = new ArrayList<>();
+
     }
 
     //trying to get the task  sorted
@@ -59,17 +58,6 @@ public class TodoList
         System.out.println("The task has been successfully deleted");
         showTasks();
 
-    }
-
-    //method for sort the tasks
-
-    public void sortTasks() {
-        System.out.println("Sorted tasks by date (earliest first): ");
-        sort(tasks);
-        this.showTasks();
-    }
-
-    private void sort(ArrayList<Task> tasks) {
     }
 
 
@@ -206,7 +194,7 @@ public class TodoList
             ObjectInputStream reader = new ObjectInputStream(fileStream);
 
             for (Task task : list = (ArrayList<Task>) reader.readObject()) {
-                
+
             }
             ;
 
@@ -255,6 +243,7 @@ public class TodoList
             return null;
         }
     }
+
 
 
 
