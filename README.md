@@ -11,8 +11,7 @@ https://ibb.co/mR1D88y
 
 ## Getting started
 
-The application can berun directly via Gradle or via a generated jar file
-
+You can start the application with Gradle or clone the repository.
 
 ### Run with Gradle
 
