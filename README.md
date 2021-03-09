@@ -32,9 +32,7 @@ https://github.com/MartaLourido/todo-list-java.git
 
 2. Open the code in the IDE of your choice or use the terminal
 
-3. In the IDE start the code from the Main.java class
-
-4. Run the project
+4. Run the project from the Main class
 
 5. You can now view tasks, add new tasks, delete tasks and save tasks.
 
