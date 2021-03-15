@@ -30,9 +30,16 @@ public class FileReader {
     public ArrayList<Task> readAsObject()
     {
         ArrayList<Task> list = new ArrayList<>();
+
+        File file1 = new File("objectFile.txt");
+
+        if(!file1.exists())
+            return list;
+
         try
         {
             File file = new File("objectFile.txt");
+
             FileInputStream fileStream = new FileInputStream(file);
             ObjectInputStream reader = new ObjectInputStream(fileStream);
 

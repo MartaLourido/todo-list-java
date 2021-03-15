@@ -12,7 +12,7 @@ public class TodoList
     private ArrayList<Task> tasks ;
     private FileReader writerAndReader;
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public TodoList()
     {
@@ -213,6 +213,7 @@ public class TodoList
         }
         catch (DateTimeParseException e)
         {
+            System.out.println(e.getMessage());
             return null;
         }
     }
