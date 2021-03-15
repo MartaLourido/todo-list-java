@@ -1,10 +1,8 @@
 package TodoList;
 
-import Tasks.Task;
-
-import java.io.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 
 
@@ -12,24 +10,32 @@ public class TodoList
 {
 
     private ArrayList<Task> tasks ;
-    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+    private FileReader writerAndReader;
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy");
 
     public TodoList()
     {
-        tasks =  readAsObject(); //todo
+        writerAndReader = new FileReader();
+        tasks =  writerAndReader.readAsObject(); //todo
 
     }
+
+    //getting the size of the task so when we show the task list we can give this information
+
+    /**public int getSize() {
+        return this.Task.size();
+    }
+
+    //compare tasks by date
+
+    public void compareByDate() {
+        Task.sort(this.Task, new CompareTasks());
+        //I was trying to use collection  sort but it doesnt work
+    } */
 
     //trying to get the task  sorted
 
-    public List< Task > getTasksSortedByDate ( )
-    {
-        // Make a copy of our `SortedSet`, to be separate from our own here.
-        // This way the calling method can do what they want, as can this class,
-        // while not stepping on each other's feet.
-        Objects.requireNonNull( this.tasks ); // Paranoid check.
-        return List.copyOf( this.tasks );
-    }
 
     //method for show the tasks
     public void showTasks() {
@@ -45,11 +51,10 @@ public class TodoList
 
     //method for remove one task
 
-    public  void removeTask() {
+    public  void removeTask(int index)
+    {
         System.out.println("Remove Task");
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("What task do you want to remove?:");
-        int index = scanner.nextInt();
+
         if((index-1)<0 || index>tasks.size()) {
             System.out.println("Wrong index number! Please enter in range of 1 to "+tasks.size());
         }else {
@@ -58,6 +63,21 @@ public class TodoList
         System.out.println("The task has been successfully deleted");
         showTasks();
 
+    }
+
+
+    /** markAsDone marks the task status as true
+     */
+
+    public void markAsDone(int index)
+    {
+        if((index-1) < 0 || index > tasks.size()) {
+            System.out.println("Wrong index number! Please enter in range of 1 to "+ tasks.size());
+        }else {
+            Task task = tasks.get(index);
+            System.out.println("Marking " + task.toString() + " as done");
+            task.markAsDone();
+        }
     }
 
 
@@ -75,18 +95,25 @@ public class TodoList
         System.out.println("Please, enter a title for the task");
         String title = scanner.nextLine();
         System.out.print("Enter the task due date (dd/mm/yyyy): ");
-        Date date = validateDate();
+        LocalDate date = validateDate();
 
         task.setTitle(name);
         task.setProject(project);
         task.setUser(title);
         task.setDate(date);
         tasks.add(task);
-        writeAsObject();
+        save();
         showTasks(); //for see the task when we add it
     }
 
-    //Writing and reading
+
+    public void save() {
+    writerAndReader.writeAsObject(tasks);
+    }
+
+    /**Writing and reading
+
+
 
     public void fillList()
     {
@@ -161,69 +188,16 @@ public class TodoList
     }
 
 
-    public void writeAsObject()
-    {
-        try
-        {
-            File file = new File("objectFile.txt");
-            FileOutputStream fileStream = new FileOutputStream(file);
-            ObjectOutputStream writer = new ObjectOutputStream(fileStream);
-
-            writer.writeObject(tasks);
-
-            writer.close();
-            fileStream.close();
-        }
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
-    }
-
-    public ArrayList<Task> readAsObject()
-    {
-        ArrayList<Task> list = new ArrayList<>();
-        try
-        {
-            File file = new File("objectFile.txt");
-            FileInputStream fileStream = new FileInputStream(file);
-            ObjectInputStream reader = new ObjectInputStream(fileStream);
-
-            for (Task task : list = (ArrayList<Task>) reader.readObject()) {
-
-            }
-            ;
-
-            reader.close();
-            fileStream.close();
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-        }
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+     */
 
 
-        return list;
 
-    }
-
-    public Date validateDate()
+    public LocalDate validateDate()
     {
         Scanner scanner = new Scanner(System.in);
         while (true)
         {
-            Date date = convertToDate(scanner.nextLine());
+            LocalDate date = convertToDate(scanner.nextLine());
             if( date  != null)
                 return date;
             else
@@ -232,39 +206,16 @@ public class TodoList
 
     }
 
-    public Date convertToDate(String dateString)
+    public LocalDate convertToDate(String dateString)
     {
         try {
-            return format.parse(dateString);
+            return LocalDate.parse(dateString, formatter);
         }
-        catch (ParseException e)
+        catch (DateTimeParseException e)
         {
-            //e.printStackTrace();
             return null;
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

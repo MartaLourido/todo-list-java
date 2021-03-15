@@ -5,7 +5,9 @@ This application works on command line.
 
 ## Class Diagram
 
-<img src="classdiagram.jpg">
+The initial class diagram is this but will change as the project progresses:
+
+<img src="img.jpg">
 
 ## Usage
 
