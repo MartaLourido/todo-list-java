@@ -1,12 +1,12 @@
-TodoList/FileReader.java
- TodoList.FileReader
-TodoList/Task.java
- TodoList.Task
-TodoList/TodoList.java
- TodoList.TodoList
-Main/UserInterface.java
- Main.UserInterface
 TodoList/CompareTasks.java
  TodoList.CompareTasks
+TodoList/Task.java
+ TodoList.Task
 Main/Main.java
  Main.Main
+Main/UserInterface.java
+ Main.UserInterface
+TodoList/FileReader.java
+ TodoList.FileReader
+TodoList/TodoList.java
+ TodoList.TodoList
