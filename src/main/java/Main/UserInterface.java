@@ -25,10 +25,11 @@ public class UserInterface
     //System.out.println("3. Edit Task (update, mark as done, remove)"); Working on edit and update
     public void MenuEditTask() {
         System.out.println("Start editing a task in ToDoLY");
+        todo.showTasks();
         System.out.println("Pick an option:");
-        System.out.println("(1) Edit task");
-        System.out.println("(2) Mark as done");
-        System.out.println("(3) Delete task");
+        System.out.println("(1) Edit task"); //what task do you want to edit? index
+        System.out.println("(2) Mark as done"); //what task do you want to mark as done? index
+        System.out.println("(3) Delete task");//what task do you want to delete? index
         //System.out.println("(4) Return to main menu");
         System.out.print("Selection: ");;
     }
