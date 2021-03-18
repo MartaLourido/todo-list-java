@@ -2,6 +2,10 @@
 /shelf/
 /workspace.xml
 
+# Ignore files that are created for keep the information of the tasks
+/objectFile.xml
+/dataFile.xml
+
 # Created by https://www.toptal.com/developers/gitignore/api/java,gradle
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,gradle
 

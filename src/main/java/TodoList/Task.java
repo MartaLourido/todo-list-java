@@ -8,6 +8,7 @@ public class Task implements Serializable
 
     //defining variables
     private static final long serialVersionUID = 6076677258728022863L;
+
     private String title;
     private LocalDate dueDate;
     private String user;
@@ -20,7 +21,7 @@ public class Task implements Serializable
         this.dueDate = dueDate;
         this.user = user;
         this.project = project;
-        this.isDone = isDone;
+        this.isDone = false;
     }
 
     public Task() {
@@ -50,6 +51,7 @@ public class Task implements Serializable
 
     //getters
 
+
     public String getTitle() {
         return title;
     }
@@ -66,8 +68,14 @@ public class Task implements Serializable
         return project;
     }
 
-    public void markAsDone() {
-        this.isDone = true;
+    public void setIsDone(boolean done) {
+        this.isDone = done;
+    }
+
+
+    //method to check if the task is done
+    public boolean getIsDone(){
+        return isDone;
     }
 
 
@@ -78,7 +86,9 @@ public class Task implements Serializable
                 ", dueDate=" + dueDate +
                 ", user='" + user + '\'' +
                 ", project='" + project + '\'' +
-                ", isDone=" + isDone +
+                ", isDone=" + (isDone?"Done":"Not done")+
                 '}';
     }
+
+
 }
