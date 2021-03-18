@@ -23,19 +23,19 @@ public class TodoList
 
     //getting the size of the task so when we show the task list we can give this information
 
-    /**public int getSize() {
-        return this.Task.size();
+
+    public int getSize() {
+        return this.tasks.size();
     }
 
     //compare tasks by date
 
-    public void compareByDate() {
-        Task.sort(this.Task, new CompareTasks());
-        //I was trying to use collection  sort but it doesnt work
-    } */
-
-    //trying to get the task  sorted
-
+   /** Commenting this because is giving an error
+    * public void compareByDate() {
+        Collection.sort(this.tasks, new CompareTasks());
+        //I was trying to use collection  sort but it doesn't work
+    }
+*/
 
     //method for show the tasks
     public void showTasks() {
@@ -65,6 +65,7 @@ public class TodoList
 
     }
 
+    //method for edit a task by project, due date or title
 
     /** markAsDone marks the task status as true
      */
