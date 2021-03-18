@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class FileReader {
 
+    //method which writes the object to a file
     public void writeAsObject(ArrayList<Task> tasks)
     {
         try
@@ -27,6 +28,7 @@ public class FileReader {
 
     }
 
+    //This method will read the object from the file
     public ArrayList<Task> readAsObject()
     {
         ArrayList<Task> list = new ArrayList<>();
