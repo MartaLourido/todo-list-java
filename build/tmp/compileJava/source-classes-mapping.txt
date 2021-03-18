@@ -4,3 +4,9 @@ TodoList/Task.java
  TodoList.Task
 TodoList/CompareTasks.java
  TodoList.CompareTasks
+Main/Main.java
+ Main.Main
+TodoList/TodoList.java
+ TodoList.TodoList
+Main/UserInterface.java
+ Main.UserInterface
