@@ -1,28 +1,27 @@
-package Tasks;
+package TodoList;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Task implements Serializable
 {
 
     //defining variables
     private static final long serialVersionUID = 6076677258728022863L;
+
     private String title;
-    private Date date;
+    private LocalDate dueDate;
     private String user;
     private String project;
     private boolean isDone;
 
 
-
-    public Task(String title, Date date, String user, String project, boolean isDone)
-    {
+    public Task(String title, LocalDate dueDate, String user, String project, boolean isDone) {
         this.title = title;
-        this.date = date;
+        this.dueDate = dueDate;
         this.user = user;
         this.project = project;
-        this.isDone = isDone;
+        this.isDone = false;
     }
 
     public Task() {
@@ -30,6 +29,7 @@ public class Task implements Serializable
     }
 
     //setters
+
 
     public void setProject(String project) {
         this.project = project;
@@ -43,22 +43,52 @@ public class Task implements Serializable
         this.title = title;
     }
 
-    public void setDate(Date date)
+    public void setDate(LocalDate date)
     {
-        this.date = date;
+        this.dueDate = date;
+    }
+
+
+    //getters
+
+
+    public String getTitle() {
+        return title;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public String getProject() {
+        return project;
+    }
+
+    public void setIsDone(boolean done) {
+        this.isDone = done;
+    }
+
+
+    //method to check if the task is done
+    public boolean getIsDone(){
+        return isDone;
     }
 
 
     @Override
     public String toString() {
-
         return "Task{" +
                 "title='" + title + '\'' +
-                ", date=" + date +
+                ", dueDate=" + dueDate +
                 ", user='" + user + '\'' +
                 ", project='" + project + '\'' +
-                ", isDone=" + isDone +
+                ", isDone=" + (isDone?"Done":"Not done")+
                 '}';
     }
+
 
 }
