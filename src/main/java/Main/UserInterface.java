@@ -7,11 +7,12 @@ import java.util.Scanner;
 public class UserInterface
 {
     private Scanner scanner = new Scanner(System.in);
-    private TodoList todo = new TodoList();
+    private static TodoList todo = new TodoList();
 
-    public void seeMenu(){
-        System.out.println("Welcome to ToDoLy");
-        //System.out.println("You have" + tasks.getsize() + "tasks todo and Y task are done");
+    public static void seeMenu(){
+        //String TEXT_BLUE = "\u001B[34m";
+        System.out.println(/**TEXT_BLUE*/  "Welcome to ToDoLy");
+        System.out.println("You have:" + todo.incompletedTasksCounter() +  ' ' + "tasks todo and" + ' ' + todo.completedTasksCounter() + ' ' + "done");
         System.out.println("Pick an option:");
         System.out.println("1. Show Task List (by date or project) ");
         System.out.println("2. Add New Task");
@@ -86,9 +87,29 @@ public class UserInterface
             }
 
         }
+
+        //todo have validate integer here:
+        //validateInteger();
     }
 
+}
 
+
+//validating the choice from the user and checking its a number
+/**
+    public int validateInteger() {
+    Scanner scanner = new Scanner(System.in);
+    int i = 5;
+        while (i <= 0) {
+            try {
+                System.out.println("Please, enter a number between 1 and 5");
+            } catch (InputMismatchException exception) {
+                System.out.println("Please enter a number between 1 - 5");
+
+            }
+        }
+    }
+*/
 
     /**public void editTaskOptions()
     {
@@ -130,7 +151,7 @@ public class UserInterface
 
 
 
-}
+
 
 
 

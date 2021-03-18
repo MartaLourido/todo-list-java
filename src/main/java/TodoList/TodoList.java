@@ -1,5 +1,7 @@
 package TodoList;
 
+import Main.UserInterface;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -27,17 +29,6 @@ public class TodoList
         return this.tasks.size();
     }
 
-
-    //compare tasks by date
-
-   /** Commenting this because is giving an error
-    * public void compareByDate() {
-        Collection.sort(this.tasks, new CompareTasks());
-        //I was trying to use collection  sort but it doesn't work
-    }
-*/
-
-    //method for show the tasks
     public void showTasks() {
         System.out.println("To-Do List Tasks");
         System.out.println("-----------------");
@@ -48,6 +39,20 @@ public class TodoList
         System.out.println("-----------------");
 
     }
+
+
+    //mark as done
+
+    public void markAsDone2(Task task) {
+
+        if (task.getIsDone()) {
+            System.out.println("No such task!");
+        } else {
+            task.setIsDone(true);
+            System.out.println("Marking " + task + " as completed");
+        }
+    }
+    
 
     //method for remove one task
 
@@ -94,61 +99,116 @@ public class TodoList
         System.out.println("(3) Edit the project of the task");
         System.out.println("(4) Mark as done");
         System.out.println("(5) Delete task");
+        System.out.println("(6) Go back to the main menu");    
         System.out.print("Selection: ");
 
         //Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         int editChoices = Integer.parseInt(input);
 
-
         switch(editChoices) {
 
             case 1 -> {
+                System.out.println("Write a new title for this task:");
                 String title = scanner.nextLine();
                 task.setTitle(title);
                 System.out.println("Task title has been edited!");
             }
 
             case 2 -> {
-                System.out.print("Enter the task due date (dd/mm/yyyy): ");
+                System.out.print("Write a new due date (dd/mm/yyyy) for this task: ");
                 LocalDate date = validateDate();
                 task.setDate(date);
                 System.out.println("The due date has been changed!");
             }
 
             case 3 -> {
+                System.out.println("Write a new project name for this task:");
                 String project = scanner.nextLine();
                 task.setProject(project);
                 System.out.println("Task project has been edited!");
             }
 
             case 4 -> {
-                task.markAsDone();
-                System.out.println("Task project has been edited!");
+                markAsDone2(task);
+                System.out.println("Yup!Task done!");
+                break;
             }
 
             case 5 -> {
+                System.out.println("The task will be removed!");
                 removeTask(task);
+                System.out.println("Task removed successfully!");
             }
 
+            case 6 -> {
+                System.out.println("Back to the main menu");
+                UserInterface.seeMenu();
+             }
+             
             default -> throw new IllegalStateException("Unexpected value: " + editChoices);
         }
+
+        //validateInteger();
+        save();
+        //tasks =  writerAndReader.readAsObject();
         showTasks();
     }
+
+    //validate integer
+
+    public void validateInteger() {
+        scanner = new Scanner(System.in);
+        String myInteger = "";
+
+        try {
+            myInteger = scanner.nextLine();
+        } catch (Exception e) {
+            System.out.println("Please, choose a valid option");
+        }
+    }
+
+
 
     /** markAsDone marks the task status as true
      */
 
-    public void markAsDone(int index)
+   /** public  void markDone(Task task)
     {
-        if((index-1) < 0 || index > tasks.size()) {
-            System.out.println("Wrong index number! Please enter in range of 1 to "+ tasks.size());
-        }else {
-            Task task = tasks.get(index);
-            System.out.println("Marking " + task.toString() + " as done");
-            task.markAsDone();
+          System.out.println("Mark task as done");
+
+          tasks.get(task).isDone();
+                                                                               
+          System.out.println("Yup! Task done!");
+
+    }    */
+
+
+
+
+    //counter for the completed task
+
+    public int completedTasksCounter() {
+        int counter = 0;
+        for (Task task : tasks) {
+            if (task.getIsDone())
+                counter ++;
         }
+        return counter;
     }
+
+    //counter fot the incompleted task
+
+       public int incompletedTasksCounter() {
+           int counter = 0;
+           for (Task task : tasks)  {
+               if (!task.getIsDone()) {
+                   counter ++;
+               }
+           }
+           return counter;
+       }
+
 
 
 
