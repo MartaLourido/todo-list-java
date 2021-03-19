@@ -24,12 +24,23 @@
 *.tar.gz
 *.rar
 
+# Intellij
+.idea/
+*.iml
+*.iws
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
 ### Gradle ###
 .gradle
 build/
+
+# Compiled Files
+bin/
+
+# Mac
+.DS_Store
 
 # Ignore Gradle GUI config
 gradle-app.setting
