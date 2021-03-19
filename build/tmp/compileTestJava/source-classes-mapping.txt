@@ -1,0 +1,10 @@
+TodoList/CompareTasksTest.java
+ TodoList.CompareTasksTest
+TodoList/FileReaderTest.java
+ TodoList.FileReaderTest
+TodoList/TaskTest.java
+ TodoList.TaskTest
+TodoList/TodoListTest.java
+ TodoList.TodoListTest
+Main/UserInterfaceTest.java
+ Main.UserInterfaceTest
