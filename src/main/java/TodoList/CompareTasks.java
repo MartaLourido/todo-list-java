@@ -1,7 +1,9 @@
-package TodoListTest;
+package TodoList;
 
-/**This class is used to be able to set the function to filter
- * by expiration date in TodoList showTasksByDate.*/
+/**
+ * This class is used to be able to set the function to filter
+ * by expiration date in TodoList showTasksByDate.
+ */
 
 import java.util.Comparator;
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TodoList.TaskTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-03-19T16:53:35" hostname="SDA-28-mbpro" time="0.013">
+<testsuite name="TodoList.TaskTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-03-19T17:53:14" hostname="SDA-28-mbpro" time="0.009">
   <properties/>
-  <testcase name="get due date should work" classname="TodoList.TaskTest" time="0.001"/>
-  <testcase name="set project name should work" classname="TodoList.TaskTest" time="0.0"/>
-  <testcase name="set due date should work" classname="TodoList.TaskTest" time="0.001"/>
-  <testcase name="get project name should work" classname="TodoList.TaskTest" time="0.003"/>
-  <testcase name="get if the task is done should work" classname="TodoList.TaskTest" time="0.001"/>
-  <testcase name="set title should work" classname="TodoList.TaskTest" time="0.001"/>
-  <testcase name="set the user should work" classname="TodoList.TaskTest" time="0.001"/>
+  <testcase name="Get due date should help to get the due date of the task" classname="TodoList.TaskTest" time="0.001"/>
+  <testcase name="Set project should help to set a new project" classname="TodoList.TaskTest" time="0.001"/>
+  <testcase name="Set due date should help to set a due date to our task" classname="TodoList.TaskTest" time="0.0"/>
+  <testcase name="Get project should get the new project" classname="TodoList.TaskTest" time="0.001"/>
+  <testcase name="GetIsDone should help the method markAsDone to mark a task as done" classname="TodoList.TaskTest" time="0.001"/>
+  <testcase name="Set title should help to set a new project" classname="TodoList.TaskTest" time="0.0"/>
+  <testcase name="Set user should set the user who write the task" classname="TodoList.TaskTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

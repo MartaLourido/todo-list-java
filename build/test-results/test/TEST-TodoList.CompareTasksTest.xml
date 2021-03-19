@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TodoList.CompareTasksTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-19T16:53:35" hostname="SDA-28-mbpro" time="0.001">
+<testsuite name="TodoList.CompareTasksTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-19T17:53:14" hostname="SDA-28-mbpro" time="0.001">
   <properties/>
-  <testcase name="testCompare()" classname="TodoList.CompareTasksTest" time="0.001"/>
+  <testcase name="Compare should work, method to compare tasks which is used for sort by date" classname="TodoList.CompareTasksTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

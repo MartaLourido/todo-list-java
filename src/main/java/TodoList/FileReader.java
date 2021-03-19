@@ -1,4 +1,4 @@
-package TodoListTest;
+package TodoList;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class FileReader {
 
         File file1 = new File("objectFile.txt");
 
-        if ( !file1.exists() )
+        if (!file1.exists())
             return list;
 
         try {
@@ -52,9 +52,7 @@ public class FileReader {
             e.printStackTrace();
         }
 
-
         return list;
-
     }
 
 }
