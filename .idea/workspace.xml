@@ -4,62 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50758606-c4f1-4de8-bacd-a3a1508ff44e" name="Default Changelist" comment="Spliting the read and write file from the TodoList class to a new class called FileReader inside the same package TodoList">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.8.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.8.3/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main/UserInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/TodoList/CompareTasks.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TodoList/CompareTasks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/TodoList/FileReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TodoList/FileReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/TodoList/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TodoList/Task.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/TodoList/TodoList.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/TodoList/TodoList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/Main/UserInterfaceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TodoList/CompareTasksTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TodoList/CompareTasksTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TodoList/FileReaderTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TodoList/TaskTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TodoList/TaskTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TodoList/TodoListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TodoList/TodoListTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/Main.UserInterfaceTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TodoList.CompareTasksTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TodoList.CompareTasksTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TodoList.FileReaderTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TodoList.TaskTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TodoList.TaskTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TodoList.TodoListTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TodoList.TodoListTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/Main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TodoList.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TodoList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-Main.UserInterfaceTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TodoList.CompareTasksTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TodoList.CompareTasksTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TodoList.FileReaderTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TodoList.TaskTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TodoList.TaskTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TodoList.TodoListTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TodoList.TodoListTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/diagram.uml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TodoList/CompareTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TodoList/CompareTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TodoList/FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TodoList/FileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TodoList/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TodoList/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TodoList/TodoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TodoList/TodoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TodoList/CompareTasksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TodoList/CompareTasksTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TodoList/TaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TodoList/TaskTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TodoList/TodoListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TodoList/TodoListTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="50758606-c4f1-4de8-bacd-a3a1508ff44e" name="Default Changelist" comment="Spliting the read and write file from the TodoList class to a new class called FileReader inside the same package TodoList" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,8 +99,11 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -323,7 +271,7 @@
       <workItem from="1616141521007" duration="6285000" />
       <workItem from="1616155324576" duration="17829000" />
       <workItem from="1616178151930" duration="74000" />
-      <workItem from="1616178230063" duration="1680000" />
+      <workItem from="1616178230063" duration="1983000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Adding date&quot;">
       <created>1614952277415</created>
