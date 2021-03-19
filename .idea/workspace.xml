@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50758606-c4f1-4de8-bacd-a3a1508ff44e" name="Default Changelist" comment="Spliting the read and write file from the TodoList class to a new class called FileReader inside the same package TodoList">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -274,7 +274,7 @@
       <workItem from="1616141521007" duration="6285000" />
       <workItem from="1616155324576" duration="17829000" />
       <workItem from="1616178151930" duration="74000" />
-      <workItem from="1616178230063" duration="3839000" />
+      <workItem from="1616178230063" duration="4704000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Adding date&quot;">
       <created>1614952277415</created>
