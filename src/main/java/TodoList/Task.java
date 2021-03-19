@@ -51,7 +51,6 @@ public class Task implements Serializable
 
     //getters
 
-
     public String getTitle() {
         return title;
     }

@@ -9,43 +9,70 @@ public class UserInterface
     private Scanner scanner = new Scanner(System.in);
     private static TodoList todo = new TodoList();
 
+    //Defining colours for menus
+    public static final String TEXT_RESET = "\u001B[0m";
+    public static final String TEXT_RED = "\u001B[31m";
+    public static final String TEXT_CYAN = "\u001B[36m";
+    public static final String TEXT_PURPLE = "\u001B[35m";
+    public static final String TEXT_GREEN = "\u001B[32m";
+
     public static void seeMenu(){
         //String TEXT_BLUE = "\u001B[34m";
-        System.out.println(/**TEXT_BLUE*/  "Welcome to ToDoLy");
-        System.out.println("You have:" + todo.incompletedTasksCounter() +  ' ' + "tasks todo and" + ' ' + todo.completedTasksCounter() + ' ' + "done");
-        System.out.println("Pick an option:");
-        System.out.println("1. Show Task List (by date or project) ");
-        System.out.println("2. Add New Task");
-        System.out.println("3. Edit Task (update, mark as done, remove)");
-        System.out.println("4. Save and Quit");
-        System.out.println("|  *Type a number to make a selection*  |");
-        System.out.print("Selection: ");
+        System.out.println(TEXT_CYAN + "******** Welcome to ToDoLy ********" + TEXT_RESET );
+        System.out.println(TEXT_RED + "You have: " + todo.incompleteTasksCounter() +  ' ' + "tasks to do and" + ' ' + todo.completedTasksCounter() + ' ' + "done" + TEXT_RESET);
+        System.out.println(TEXT_CYAN + "         ****************          " + TEXT_RESET );
+        System.out.println(TEXT_CYAN + "Pick an option:" + TEXT_RESET );
+        System.out.println(TEXT_GREEN  + "1." + TEXT_RESET + "Show Task List (by date or project) ");
+        System.out.println(TEXT_GREEN  + "2." + TEXT_RESET + "Add a new Task");
+        System.out.println(TEXT_GREEN  + "3." + TEXT_RESET + "Edit Task (update, mark as done, remove)");
+        System.out.println(TEXT_GREEN  + "4." + TEXT_RESET + "Save and Quit");
+        System.out.println(TEXT_PURPLE + "|  *Type a number to make a selection*  |" + TEXT_RESET);
+        System.out.print(TEXT_CYAN + "Selection: " + TEXT_RESET);
     }
 
-    //System.out.println("3. Edit Task (update, mark as done, remove)"); Working on edit and update
-   /** public void MenuEditTask() {
-        System.out.println("Start editing a task in ToDoLY");
-        todo.showTasks();
-        System.out.println("Pick an option:");
-        System.out.println("(1) Edit task"); //what task do you want to edit? index
-        System.out.println("(2) Mark as done"); //what task do you want to mark as done? index
-        System.out.println("(3) Delete task");//what task do you want to delete? index
-        //System.out.println("(4) Return to main menu");
-        System.out.print("Selection: ");;
-    }*/
+    public void showTasksMenu(){
+        {
+            System.out.println("What do you want to edit in this task?");
+            System.out.println("Pick an option:");
+            System.out.println("(1) 1. Show Task List");
+            System.out.println("(2) 2. Show Task by date");
+            System.out.println("(3) 3. Show Task by project");
+            System.out.println("(4) Go back to the main menu");
+            System.out.print("Selection: ");
 
-    //Menu for choose what task do you want to edit and what do you want to edit
-    public void MenuEditTaskOptions() {
+            //Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
+            int editChoices = Integer.parseInt(input);
 
-        todo.editOneTask();
-        System.out.println("What do you want to edit in this task?");
-        System.out.println("Pick an option:");
-        System.out.println("(1) Edit title of the task");
-        System.out.println("(2) Edit the due date of the task");
-        System.out.println("(3) Edit the project of the task");
-        System.out.println("(4) Mark as done");
-        System.out.println("(5) Delete task");
-        System.out.print("Selection: ");
+            switch(editChoices) {
+
+                case 1 -> {
+                    todo.showTasks();
+                }
+
+                case 2 -> {
+                   /**showTaskByDate will print the tasks in descending order,
+                    * starting from the one with the nearest due date */
+                    System.out.println("Here you can see your tasks sorted by due date:");
+                    todo.showTasksByDate() ;
+                }
+
+                case 3 -> {
+                    //ShowTaskByProject will print the tasks by project
+                    System.out.println("Here you can see your tasks sorted by projects:");
+                    todo.showTasksByProject();
+                }
+
+                case 4 -> {
+                   break; //Go back to the main menu
+                }
+
+                default -> throw new IllegalStateException("Unexpected value: " + editChoices);
+            }
+
+            todo.save();
+            todo.showTasks();
+        }
 
     }
 
@@ -69,7 +96,7 @@ public class UserInterface
             switch (choice) {
                 case 1 -> {
                     System.out.println("Show Task List");
-                    todo.showTasks();
+                    showTasksMenu();
                 }
                 case 2 -> {
                     System.out.println("Add new Task");
@@ -88,6 +115,7 @@ public class UserInterface
 
         }
 
+
         //todo have validate integer here:
         //validateInteger();
     }
@@ -96,52 +124,66 @@ public class UserInterface
 
 
 //validating the choice from the user and checking its a number
-/**
-    public int validateInteger() {
+
+   /** public int validateInteger() {
     Scanner scanner = new Scanner(System.in);
-    int i = 5;
+    int number = 5;
         while (i <= 0) {
             try {
+                number = scanner.nextLine();
                 System.out.println("Please, enter a number between 1 and 5");
-            } catch (InputMismatchException exception) {
-                System.out.println("Please enter a number between 1 - 5");
-
+            } catch (Exception e) {
+                System.out.println("Please, choose a valid option");
             }
+        }
+
+
+    //validate integer
+/**
+    public void validateInteger() {
+        scanner = new Scanner(System.in);
+        String myInteger = "";
+
+        try {
+            myInteger = scanner.nextLine();
+        } catch (Exception e) {
+            System.out.println("Please, choose a valid option");
         }
     }
 */
 
-    /**public void editTaskOptions()
-    {
-        String editChoices = scanner.nextLine();
-        MenuEditTaskOptions();
 
-        int index = Integer.parseInt(scanner.nextLine()); //todo change this to make a call to validate int method
+/**public void editTaskOptions()
+{
+    String editChoices = scanner.nextLine();
+    MenuEditTaskOptions();
 
-        switch(editChoices) {
+    int index = Integer.parseInt(scanner.nextLine()); //todo change this to make a call to validate int method
 
-            case "1" -> {
-                todo.editOneTask(index);
-                todo.editTaskOptions();
-                System.out.println("(1) Edit title of the task");
-            }
+    switch(editChoices) {
 
-            case "2" -> {
-                todo.markAsDone(index);
-                System.out.println("(2) Edit the due date of the task");
-
-            }
-
-            case "3" -> {
-                todo.removeTask(task);
-                System.out.println("Task deleted successfully!");
-
-            }
-
-
-            default -> throw new IllegalStateException("Unexpected value: " + editChoices);
+        case "1" -> {
+            todo.editOneTask(index);
+            todo.editTaskOptions();
+            System.out.println("(1) Edit title of the task");
         }
-    } */
+
+        case "2" -> {
+            todo.markAsDone(index);
+            System.out.println("(2) Edit the due date of the task");
+
+        }
+
+        case "3" -> {
+            todo.removeTask(task);
+            System.out.println("Task deleted successfully!");
+
+        }
+
+
+        default -> throw new IllegalStateException("Unexpected value: " + editChoices);
+    }
+} */
 
 
 
