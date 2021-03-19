@@ -1,4 +1,4 @@
-package TodoListTest;
+package TodoList;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -7,19 +7,19 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class TodoList {
-    private final Scanner scanner = new Scanner(System.in);
-    DateTimeFormatter SimpleDateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    private ArrayList<Task> tasks;
-    private FileReader writerAndReader;
     //colors for printing with style
     public static final String TEXT_RESET = "\u001B[0m";
     public static final String TEXT_RED = "\u001B[31m";
     public static final String TEXT_CYAN = "\u001B[36m";
     public static final String TEXT_GREEN = "\u001B[32m";
+    private final Scanner scanner = new Scanner(System.in);
+    DateTimeFormatter SimpleDateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private ArrayList<Task> tasks;
+    private FileReader writerAndReader;
 
     public TodoList() {
         writerAndReader = new FileReader();
-        tasks = writerAndReader.readAsObject(); //todo
+        tasks = writerAndReader.readAsObject();
 
     }
 
@@ -38,12 +38,10 @@ public class TodoList {
 
     }
 
-
     //method for mark a task as done in the Edit Task
-
     public void markAsDone(Task task) {
 
-        if ( task.getIsDone() ) {
+        if (task.getIsDone()) {
             System.out.println("No such task!");
         } else {
             task.setIsDone(true);
@@ -53,7 +51,6 @@ public class TodoList {
 
 
     //method for remove one task
-
     public void removeTask(Task task) {
         System.out.println("Remove Task");
 
@@ -80,11 +77,9 @@ public class TodoList {
         Collections.sort(this.tasks, new CompareTasks());
     }
 
-
     /**
      * method editOneTask allow us to edit/update one task
      */
-
     public void editOneTask() {
         showTasks();
         System.out.println(TEXT_RED + "What task do you want to edit?" + TEXT_RESET);
@@ -92,7 +87,7 @@ public class TodoList {
 
         int index = Integer.parseInt(indexString);
 
-        if ( (index - 1) < 0 || index > tasks.size() ) {
+        if ((index - 1) < 0 || index > tasks.size()) {
             System.out.println(TEXT_RED + "Wrong index number! Please enter in range of 1 to " + tasks.size() + TEXT_RESET);
         } else {
             Task task = tasks.get(index - 1);
@@ -102,17 +97,17 @@ public class TodoList {
         }
     }
 
-
+    //Switch statement for offer the different options to edit one task
     public void editTaskOptions(Task task) {
 
         System.out.println(TEXT_RED + "What do you want to edit in this task?" + TEXT_RESET);
         System.out.println("Pick an option:");
-        System.out.println("(1)"+ TEXT_CYAN + "Edit title of the task" + TEXT_RESET);
-        System.out.println("(2)"+ TEXT_CYAN + "Edit due date of the task" + TEXT_RESET);
-        System.out.println("(3)"+ TEXT_CYAN + "Edit project of the task" + TEXT_RESET);
-        System.out.println("(4)"+ TEXT_CYAN + "Mark task as done" + TEXT_RESET);
-        System.out.println("(5)"+ TEXT_CYAN + "Delete task" + TEXT_RESET);
-        System.out.println("(6)" + TEXT_GREEN+ "Go back to the main menu" + TEXT_RESET);
+        System.out.println("(1)" + TEXT_CYAN + "Edit title of the task" + TEXT_RESET);
+        System.out.println("(2)" + TEXT_CYAN + "Edit due date of the task" + TEXT_RESET);
+        System.out.println("(3)" + TEXT_CYAN + "Edit project of the task" + TEXT_RESET);
+        System.out.println("(4)" + TEXT_CYAN + "Mark task as done" + TEXT_RESET);
+        System.out.println("(5)" + TEXT_CYAN + "Delete task" + TEXT_RESET);
+        System.out.println("(6)" + TEXT_GREEN + "Go back to the main menu" + TEXT_RESET);
         System.out.print(TEXT_RED + "Selection: " + TEXT_RESET);
 
         String input = scanner.nextLine();
@@ -169,22 +164,20 @@ public class TodoList {
 
 
     //counter for the completed task
-
     public int completedTasksCounter() {
         int counter = 0;
         for (Task task : tasks) {
-            if ( task.getIsDone() )
+            if (task.getIsDone())
                 counter++;
         }
         return counter;
     }
 
     //counter fot the incomplete task
-
     public int incompleteTasksCounter() {
         int counter = 0;
         for (Task task : tasks) {
-            if ( !task.getIsDone() ) {
+            if (!task.getIsDone()) {
                 counter++;
             }
         }
@@ -221,13 +214,12 @@ public class TodoList {
         writerAndReader.writeAsObject(tasks);
     }
 
-
     //method for validate de date
     public LocalDate validateDate() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             LocalDate date = convertToDate(scanner.nextLine());
-            if ( date != null )
+            if (date != null)
                 return date;
             else
                 System.out.println("please enter the date correctly");
@@ -244,7 +236,6 @@ public class TodoList {
             return null;
         }
     }
-
 
 }
 

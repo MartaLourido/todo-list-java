@@ -14,12 +14,12 @@ public class UserInterface {
     private static final TodoList todo = new TodoList();
     private final Scanner scanner = new Scanner(System.in);
 
+    //method to display the menu
     public static void seeMenu() {
-        //String TEXT_BLUE = "\u001B[34m";
         System.out.println(TEXT_CYAN + "******** Welcome to ToDoLy ********" + TEXT_RESET);
         System.out.println(TEXT_RED + "You have: " + todo.incompleteTasksCounter() + ' ' + "tasks to do and" + ' ' + todo.completedTasksCounter() + ' ' + "done" + TEXT_RESET);
         System.out.println(TEXT_CYAN + "         ****************          " + TEXT_RESET);
-        System.out.println(TEXT_CYAN + "Pick an option:"  + TEXT_RESET);
+        System.out.println(TEXT_CYAN + "Pick an option:" + TEXT_RESET);
         System.out.println(TEXT_GREEN + "1." + TEXT_RESET + "Show Task List (by date or project) ");
         System.out.println(TEXT_GREEN + "2." + TEXT_RESET + "Add a new Task");
         System.out.println(TEXT_GREEN + "3." + TEXT_RESET + "Edit Task (update, mark as done, remove)");
@@ -73,10 +73,10 @@ public class UserInterface {
 
     }
 
-
+    //method to run the menu
     public void run() {
 
-       int choice = 0;
+        int choice = 0;
         while (choice != 4) {
             //see the menu
             seeMenu();
@@ -104,141 +104,6 @@ public class UserInterface {
                 }
                 default -> System.out.println("please write a correct number between 1 and 4");
             }
-
         }
-
     }
-
 }
-
-//validating the choice from the user and checking its a number
-
-/**
- * public int validateInteger() {
- * Scanner scanner = new Scanner(System.in);
- * int number = 5;
- * while (i <= 0) {
- * try {
- * number = scanner.nextLine();
- * System.out.println("Please, enter a number between 1 and 5");
- * } catch (Exception e) {
- * System.out.println("Please, choose a valid option");
- * }
- * }
- * <p>
- * <p>
- * //validate integer
- * /**
- * public void validateInteger() {
- * scanner = new Scanner(System.in);
- * String myInteger = "";
- * <p>
- * try {
- * myInteger = scanner.nextLine();
- * } catch (Exception e) {
- * System.out.println("Please, choose a valid option");
- * }
- * }
- * public void editTaskOptions()
- * {
- * String editChoices = scanner.nextLine();
- * MenuEditTaskOptions();
- * <p>
- * int index = Integer.parseInt(scanner.nextLine()); //todo change this to make a call to validate int method
- * <p>
- * switch(editChoices) {
- * <p>
- * case "1" -> {
- * todo.editOneTask(index);
- * todo.editTaskOptions();
- * System.out.println("(1) Edit title of the task");
- * }
- * <p>
- * case "2" -> {
- * todo.markAsDone(index);
- * System.out.println("(2) Edit the due date of the task");
- * <p>
- * }
- * <p>
- * case "3" -> {
- * todo.removeTask(task);
- * System.out.println("Task deleted successfully!");
- * <p>
- * }
- * <p>
- * <p>
- * default -> throw new IllegalStateException("Unexpected value: " + editChoices);
- * }
- * }
- */
-
-
-/**public void editTaskOptions()
- {
- String editChoices = scanner.nextLine();
- MenuEditTaskOptions();
-
- int index = Integer.parseInt(scanner.nextLine()); //todo change this to make a call to validate int method
-
- switch(editChoices) {
-
- case "1" -> {
- todo.editOneTask(index);
- todo.editTaskOptions();
- System.out.println("(1) Edit title of the task");
- }
-
- case "2" -> {
- todo.markAsDone(index);
- System.out.println("(2) Edit the due date of the task");
-
- }
-
- case "3" -> {
- todo.removeTask(task);
- System.out.println("Task deleted successfully!");
-
- }
-
-
- default -> throw new IllegalStateException("Unexpected value: " + editChoices);
- }
- } */
-
-
-//todo have validate integer here:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

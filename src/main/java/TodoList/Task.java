@@ -1,4 +1,4 @@
-package TodoListTest;
+package TodoList;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -13,6 +13,7 @@ public class Task implements Serializable {
     private String project;
     private boolean isDone;
 
+    //Constructor
     public Task(String title, LocalDate dueDate, String user, String project, boolean isDone) {
         this.title = title;
         this.dueDate = dueDate;

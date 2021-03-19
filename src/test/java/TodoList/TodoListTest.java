@@ -1,10 +1,11 @@
-package TodoListTest;
+package TodoList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,8 +60,8 @@ class TodoListTest {
     void testShowTasksByDate() {
         // Setup
         CompareTasks testCompare = new CompareTasks();
-        final Task task1 = new Task("title",  LocalDate.parse("2021-12-25"), "user", "project", false);
-        final Task task2 = new Task("title",  LocalDate.parse("2021-12-24"), "user", "project", false);
+        final Task task1 = new Task("title", LocalDate.parse("2021-12-25"), "user", "project", false);
+        final Task task2 = new Task("title", LocalDate.parse("2021-12-24"), "user", "project", false);
         int result = 1;
         // Run the test
         todoListUnderTest.showTasksByDate();
@@ -82,25 +83,14 @@ class TodoListTest {
         assertEquals(false, newTask.getIsDone());
     }
 
-
-    @Test
-    @DisplayName("ValidateDate should validate the date")
-    void testValidateDate() {
-        // Setup done in the void SetUp
-        // Run the test
-        LocalDate expected = LocalDate.parse("2021-01-10");
-        // Verify the results
-        assertEquals(expected, todoListUnderTest.validateDate());
-    }
-
     @Test
     @DisplayName("ConvertToDate should convert the date to String")
     void testConvertToDate() {
-        // Setup done in the void setUp
-        // Run the test
-        LocalDate expected = todoListUnderTest.convertToDate("01-01-2021");
-        // Verify the results
-        assertEquals(true, expected);
+
+        LocalDate result = todoListUnderTest.convertToDate("20/08/2021");
+        assertEquals(result.getDayOfMonth(), 20);
+        assertEquals(result.getMonth(), Month.AUGUST);
+        assertEquals(result.getYear(), 2021);
     }
 
 }

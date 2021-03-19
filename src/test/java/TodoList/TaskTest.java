@@ -1,4 +1,4 @@
-package TodoListTest;
+package TodoList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -18,7 +18,7 @@ class TaskTest {
     }
 
     @Test
-    @DisplayName("set project name should work")
+    @DisplayName("Set project should help to set a new project")
     void setProject() {
         //setup
         String newProject = "Setting a new project";
@@ -29,7 +29,7 @@ class TaskTest {
     }
 
     @Test
-    @DisplayName("get project name should work")
+    @DisplayName("Get project should get the new project")
     void getProject() {
         //setup
         String newProject = "Setting a new project";
@@ -40,7 +40,7 @@ class TaskTest {
     }
 
     @Test
-    @DisplayName("set title should work")
+    @DisplayName("Set title should help to set a new project")
     void setTitle() {
         //setup
         String newTitle = "Setting a new title";
@@ -51,7 +51,7 @@ class TaskTest {
     }
 
     @Test
-    @DisplayName("set due date should work")
+    @DisplayName("Set due date should help to set a due date to our task")
     void testSetDueDate() {
         //setup
         taskUnderTest.setDate(LocalDate.parse("2021-01-10"));
@@ -62,7 +62,7 @@ class TaskTest {
     }
 
     @Test
-    @DisplayName("get due date should work")
+    @DisplayName("Get due date should help to get the due date of the task")
     void testGetDueDate() {
         //setup
         taskUnderTest.setDate(LocalDate.parse("2021-01-10"));
@@ -73,7 +73,7 @@ class TaskTest {
     }
 
     @Test
-    @DisplayName("get if the task is done should work")
+    @DisplayName("GetIsDone should help the method markAsDone to mark a task as done")
     void testGetIsDone() {
         //setup
         taskUnderTest.setIsDone(true);
@@ -82,10 +82,10 @@ class TaskTest {
     }
 
     @Test
-    @DisplayName("set the user should work")
+    @DisplayName("Set user should set the user who write the task")
     void testSetUser() {
         //setup
-        String user = "Setting a new project";
+        String user = "Setting user";
         //run the test
         taskUnderTest.setUser(user);
         // Verify the results
