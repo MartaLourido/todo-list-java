@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-36.0" y="-15.0">Main.UserInterface</node>
+    <node x="0.0" y="345.0">TodoList.Task</node>
+    <node x="-32.0" y="225.0">TodoList.CompareTasks</node>
+    <node x="184.0" y="345.0">TodoList.TodoList</node>
+    <node x="240.0" y="225.0">Main.Main</node>
+    <node x="-24.0" y="105.0">TodoList.FileReader</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Directed Orthogonal" zoom="1.1" x="281.86363636363626" y="185.0" />
+  <SelectedNodes>
+    <node>Main.UserInterface</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

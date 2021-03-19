@@ -1,0 +1,25 @@
+[32mTo-Do List Tasks[0m
+[32m-----------------[0m
+[1 Task{title='title', dueDate=2020-01-01, user='user', project='project', isDone=Not done}
+[32m-----------------[0m
+	jMarking Task{title='title', dueDate=2020-01-01, user='user', project='project', isDone=Done} as completed
+
+1Text '30-11-2021' could not be parsed at index 2
+Remove Task
+'The task has been successfully deleted
+'What do you want to edit in this task?
+Pick an option:
+(1) 1. Show Task List
+(2) 2. Show Task by date
+(3) 3. Show Task by project
+(4) Go back to the main menu
+Selection: -[36m******** Welcome to ToDoLy ********[0m
+,[31mYou have: 1 tasks to do and 0 done[0m
+-[36m         ****************          [0m
+[36mPick an option:[0m
+0[32m1.[0mShow Task List (by date or project) 
+[32m2.[0mAdd a new Task
+4[32m3.[0mEdit Task (update, mark as done, remove)
+[32m4.[0mSave and Quit
+3[35m|  *Type a number to make a selection*  |[0m
+[36mSelection: [0m

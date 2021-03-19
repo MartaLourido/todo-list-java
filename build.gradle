@@ -18,6 +18,11 @@ test {
     useJUnitPlatform()
 }
 
+tasks.withType(Test) {
+    useJUnitPlatform()
+    jvmArgs '--enable-preview'
+}
+
 jar {
     manifest {
         attributes "Main-Class": "com.gradle.tutorial.FizzBuzzProcessor"
