@@ -4,33 +4,31 @@ import TodoList.TodoList;
 
 import java.util.Scanner;
 
-public class UserInterface
-{
-    private Scanner scanner = new Scanner(System.in);
-    private static TodoList todo = new TodoList();
-
+public class UserInterface {
     //Defining colours for menus
     public static final String TEXT_RESET = "\u001B[0m";
     public static final String TEXT_RED = "\u001B[31m";
     public static final String TEXT_CYAN = "\u001B[36m";
     public static final String TEXT_PURPLE = "\u001B[35m";
     public static final String TEXT_GREEN = "\u001B[32m";
+    private static final TodoList todo = new TodoList();
+    private final Scanner scanner = new Scanner(System.in);
 
-    public static void seeMenu(){
+    public static void seeMenu() {
         //String TEXT_BLUE = "\u001B[34m";
-        System.out.println(TEXT_CYAN + "******** Welcome to ToDoLy ********" + TEXT_RESET );
-        System.out.println(TEXT_RED + "You have: " + todo.incompleteTasksCounter() +  ' ' + "tasks to do and" + ' ' + todo.completedTasksCounter() + ' ' + "done" + TEXT_RESET);
-        System.out.println(TEXT_CYAN + "         ****************          " + TEXT_RESET );
-        System.out.println(TEXT_CYAN + "Pick an option:" + TEXT_RESET );
-        System.out.println(TEXT_GREEN  + "1." + TEXT_RESET + "Show Task List (by date or project) ");
-        System.out.println(TEXT_GREEN  + "2." + TEXT_RESET + "Add a new Task");
-        System.out.println(TEXT_GREEN  + "3." + TEXT_RESET + "Edit Task (update, mark as done, remove)");
-        System.out.println(TEXT_GREEN  + "4." + TEXT_RESET + "Save and Quit");
+        System.out.println(TEXT_CYAN + "******** Welcome to ToDoLy ********" + TEXT_RESET);
+        System.out.println(TEXT_RED + "You have: " + todo.incompleteTasksCounter() + ' ' + "tasks to do and" + ' ' + todo.completedTasksCounter() + ' ' + "done" + TEXT_RESET);
+        System.out.println(TEXT_CYAN + "         ****************          " + TEXT_RESET);
+        System.out.println(TEXT_CYAN + "Pick an option:"  + TEXT_RESET);
+        System.out.println(TEXT_GREEN + "1." + TEXT_RESET + "Show Task List (by date or project) ");
+        System.out.println(TEXT_GREEN + "2." + TEXT_RESET + "Add a new Task");
+        System.out.println(TEXT_GREEN + "3." + TEXT_RESET + "Edit Task (update, mark as done, remove)");
+        System.out.println(TEXT_GREEN + "4." + TEXT_RESET + "Save and Quit");
         System.out.println(TEXT_PURPLE + "|  *Type a number to make a selection*  |" + TEXT_RESET);
         System.out.print(TEXT_CYAN + "Selection: " + TEXT_RESET);
     }
 
-    public void showTasksMenu(){
+    public void showTasksMenu() {
         {
             System.out.println("What do you want to edit in this task?");
             System.out.println("Pick an option:");
@@ -40,21 +38,20 @@ public class UserInterface
             System.out.println("(4) Go back to the main menu");
             System.out.print("Selection: ");
 
-            //Scanner scanner = new Scanner(System.in);
             String input = scanner.nextLine();
             int editChoices = Integer.parseInt(input);
 
-            switch(editChoices) {
+            switch (editChoices) {
 
                 case 1 -> {
                     todo.showTasks();
                 }
 
                 case 2 -> {
-                   /**showTaskByDate will print the tasks in descending order,
-                    * starting from the one with the nearest due date */
+                    /**showTaskByDate will print the tasks in descending order,
+                     * starting from the one with the nearest due date */
                     System.out.println("Here you can see your tasks sorted by due date:");
-                    todo.showTasksByDate() ;
+                    todo.showTasksByDate();
                 }
 
                 case 3 -> {
@@ -64,7 +61,7 @@ public class UserInterface
                 }
 
                 case 4 -> {
-                   break; //Go back to the main menu
+                    break; //Go back to the main menu
                 }
 
                 default -> throw new IllegalStateException("Unexpected value: " + editChoices);
@@ -77,21 +74,16 @@ public class UserInterface
     }
 
 
-    public void run()
-    {
+    public void run() {
 
-        int choice = 0;
-        while (choice != 4)
-        {
+       int choice = 0;
+        while (choice != 4) {
             //see the menu
             seeMenu();
             String input = scanner.nextLine();
             choice = Integer.parseInt(input);
 
             System.out.println("Please, choose the task which you want to edit, update or remove");
-
-            //switch with some cases which call the add, remove, and another methods from the TodoList/TaskList
-
 
             switch (choice) {
                 case 1 -> {
@@ -115,80 +107,106 @@ public class UserInterface
 
         }
 
-
-        //todo have validate integer here:
-        //validateInteger();
     }
 
 }
 
-
 //validating the choice from the user and checking its a number
 
-   /** public int validateInteger() {
-    Scanner scanner = new Scanner(System.in);
-    int number = 5;
-        while (i <= 0) {
-            try {
-                number = scanner.nextLine();
-                System.out.println("Please, enter a number between 1 and 5");
-            } catch (Exception e) {
-                System.out.println("Please, choose a valid option");
-            }
-        }
-
-
-    //validate integer
 /**
-    public void validateInteger() {
-        scanner = new Scanner(System.in);
-        String myInteger = "";
-
-        try {
-            myInteger = scanner.nextLine();
-        } catch (Exception e) {
-            System.out.println("Please, choose a valid option");
-        }
-    }
-*/
+ * public int validateInteger() {
+ * Scanner scanner = new Scanner(System.in);
+ * int number = 5;
+ * while (i <= 0) {
+ * try {
+ * number = scanner.nextLine();
+ * System.out.println("Please, enter a number between 1 and 5");
+ * } catch (Exception e) {
+ * System.out.println("Please, choose a valid option");
+ * }
+ * }
+ * <p>
+ * <p>
+ * //validate integer
+ * /**
+ * public void validateInteger() {
+ * scanner = new Scanner(System.in);
+ * String myInteger = "";
+ * <p>
+ * try {
+ * myInteger = scanner.nextLine();
+ * } catch (Exception e) {
+ * System.out.println("Please, choose a valid option");
+ * }
+ * }
+ * public void editTaskOptions()
+ * {
+ * String editChoices = scanner.nextLine();
+ * MenuEditTaskOptions();
+ * <p>
+ * int index = Integer.parseInt(scanner.nextLine()); //todo change this to make a call to validate int method
+ * <p>
+ * switch(editChoices) {
+ * <p>
+ * case "1" -> {
+ * todo.editOneTask(index);
+ * todo.editTaskOptions();
+ * System.out.println("(1) Edit title of the task");
+ * }
+ * <p>
+ * case "2" -> {
+ * todo.markAsDone(index);
+ * System.out.println("(2) Edit the due date of the task");
+ * <p>
+ * }
+ * <p>
+ * case "3" -> {
+ * todo.removeTask(task);
+ * System.out.println("Task deleted successfully!");
+ * <p>
+ * }
+ * <p>
+ * <p>
+ * default -> throw new IllegalStateException("Unexpected value: " + editChoices);
+ * }
+ * }
+ */
 
 
 /**public void editTaskOptions()
-{
-    String editChoices = scanner.nextLine();
-    MenuEditTaskOptions();
+ {
+ String editChoices = scanner.nextLine();
+ MenuEditTaskOptions();
 
-    int index = Integer.parseInt(scanner.nextLine()); //todo change this to make a call to validate int method
+ int index = Integer.parseInt(scanner.nextLine()); //todo change this to make a call to validate int method
 
-    switch(editChoices) {
+ switch(editChoices) {
 
-        case "1" -> {
-            todo.editOneTask(index);
-            todo.editTaskOptions();
-            System.out.println("(1) Edit title of the task");
-        }
+ case "1" -> {
+ todo.editOneTask(index);
+ todo.editTaskOptions();
+ System.out.println("(1) Edit title of the task");
+ }
 
-        case "2" -> {
-            todo.markAsDone(index);
-            System.out.println("(2) Edit the due date of the task");
+ case "2" -> {
+ todo.markAsDone(index);
+ System.out.println("(2) Edit the due date of the task");
 
-        }
+ }
 
-        case "3" -> {
-            todo.removeTask(task);
-            System.out.println("Task deleted successfully!");
+ case "3" -> {
+ todo.removeTask(task);
+ System.out.println("Task deleted successfully!");
 
-        }
-
-
-        default -> throw new IllegalStateException("Unexpected value: " + editChoices);
-    }
-} */
+ }
 
 
+ default -> throw new IllegalStateException("Unexpected value: " + editChoices);
+ }
+ } */
 
 
-    //todo have validate integer here:
+//todo have validate integer here:
 
 
 
